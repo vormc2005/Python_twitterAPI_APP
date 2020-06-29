@@ -1,6 +1,4 @@
-import constants
-import oauth2
-import urllib.parse as urlparse
+
 from user import User
 from database import Database
 from twitter_utils import get_request_token, get_oauth_verifier, get_access_token

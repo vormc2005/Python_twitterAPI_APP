@@ -45,13 +45,11 @@ class User:
         authorized_token = oauth2.Token(self.oauth_token, self.oauth_token_secret)
         # authorized_token = oauth2.Token(access_token['oauth_token'], access_token['oauth_token_secret'])
         authorized_client = oauth2.Client(consumer, authorized_token)
-
         # Make Twitter API calls
-        response, content = authorized_client.request(
-            uri, verb)
+        response, content = authorized_client.request(uri, verb)
         if response.status != 200:
             print("An error occurred when searching!")
 
-        return json.loads(content.encode('utf-8'))
+        return json.loads(content.decode('utf-8'))
 
 
